@@ -1,20 +1,21 @@
-# Neural Machine Translation
+# Generative Adversarial Networks
 
-The machine translation task was traditionally performed using statistical methods. However, like most statistical paradigms, this Statistical Machine Translation (SMT) had large computational and memory overheads.
+Generative Adversarial Networks (GANs) marked a transformative shift in generative modeling, introducing a novel framework where two neural networks, the generator and the discriminator, engage in a dynamic adversarial process. Prior to the advent of GANs, generative tasks were predominantly tackled using statistical models or rule-based approaches, which often struggled with scalability, complexity, and generating high-quality outputs. GANs, by contrast, harness the power of deep learning to model intricate data distributions, enabling the generation of incredibly realistic images, audio, and text. This section delves into implementations of seminal papers that introduced breakthrough GAN architectures, illustrating their far-reaching impact on the generative landscape and ongoing research advancements.
 
-With the popularization of neural networks and deep learning, heavy research into Neural Machine Translation (NMT) and its successful employment has largely replaced SMT. This section contains implementations of papers that introduced some of those ground-breaking architectures in NMT.
-
-All the models were trained on the [Multi30k](https://arxiv.org/abs/1605.00459) dataset which contains roughly 30 thousand English, German and French sentences, each sentence being 10-20 words long. We have trained and evaluated our models for translation from German to English.
+All the models were trained on the [CIFAR10](https://www.kaggle.com/c/cifar-10/) dataset which consists of 60,000 32x32 color images containing one of 10 object classes, with 6000 images per class.
 
 Below is a table addressing some common data and optimization related parameters.
 
-| Parameter      |       Value        |
-| -------------- |:------------------:|
-| Training Set   |    29000/31014     |
-| Testing Set    |     1000/31014     |
-| Validation Set |     1014/31014     |
-| Loss Function  | Cross Entropy Loss |
-| Optimizer      |       AdamW        |
+| Parameter                |          DCGAN        |              WGAN             |
+| ------------------------ |:---------------------:|:-----------------------------:|
+| Latent Dimension (z)     |           100         |              100              |
+| Batch Size               |           128         |               64              |
+| Learning Rate            |           2e-4        |              5e-5             |
+| Discriminator Iterations |            1          |                5              |
+| Loss Function            |   Cross Entropy Loss  |       Wasserstein loss        |
+| Optimizer                | Adam(β1=0.5, β2=0.999)|             RMSprop           |
+| Noise Distribution       |        Gaussian       |             Gaussian          |
+| Activation Functions     |Generator: ReLU (intermediate layers), Tanh (output); Discriminator: Leaky ReLU (hidden layers), Sigmoid (output layer)|Generator: ReLU (intermediate layers), Tanh (output); Discriminator: Leaky ReLU (hidden layers)|
 
 ## Architectures
 
