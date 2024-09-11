@@ -20,14 +20,10 @@ Below is a table addressing some common data and optimization related parameters
 ## Architectures
 
 ### 1. [Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks](https://github.com/Aiden-Ross-Dsouza/Generative-Models/blob/a2d87c38e41ebc374f4e9c9a6deda99fb91a8384/Generative%20Adversarial%20Networks/notebooks/DCGAN.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1OfWn0-nDdxi_66ZS-qPD4Eii1A2Jd1Rt?usp=sharing)
-This paper proposes the pioneering paradigm for neural machine translation using a simple yet applaudable encoder-decoder RNN pair. Although being the poorest of performers in this list, it earns a spot due to its novely.\
-**<ins>Note:</ins>** A few changes have been made in order to improve performance.
-1. Unlike the paper, reversing the input sequences resulted in a lower BLEU Score. Hence, the input sequences have not been reversed.
-2. Further an additional parameter called ```teacher_forcing_ratio```, which is the probability of using the ground truth tokens as inputs while decoding has been introduced. It is usually set to 1 while training and 0 while sampling. However, setting it to 0.5 while training resulted in a better BLEU Score than setting it to 1.
+This paper advances GANs by incorporating deep convolutional architectures for both the generator and discriminator. Key innovations include the use of strided convolutions instead of pooling, batch normalization to stabilize training, and Leaky ReLU activations to address vanishing gradients. The DCGAN framework effectively generates realistic images and learns useful representations, although challenges like mode collapse and training stability persist.
 
 ### 2. [Wasserstein GAN](https://github.com/Aiden-Ross-Dsouza/Generative-Models/blob/a2d87c38e41ebc374f4e9c9a6deda99fb91a8384/Generative%20Adversarial%20Networks/notebooks/WGAN.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Fz-QJKFOcdCCX61LR05dTzQYZuO2IQ59?usp=sharing)
-This paper presents a remarkable improvement in the Sequence to Sequence architecture by introducing a (soft)alignment metric called "attention". This metric induces a sense of similarity between tokens of the source and decoded sentences, which increases the BLEU score by almost 1.5 times and is much more robust with regards to the length of source and target sentences.\
-**<ins>Note:</ins>** In this implementation, setting the ```teacher_forcing_ratio``` to 1 resulted in a better BLEU score (even with higher validation and test perplexities) than setting it to 0.5.
+This paper introduces the Wasserstein distance as an alternative to the Jensen-Shannon divergence used in traditional GANs, improving training stability and convergence. It employs the Earth Mover’s Distance (EMD) to measure the discrepancy between real and generated data distributions, which addresses issues like mode collapse and vanishing gradients. The paper also proposes the use of a critic network with weight clipping to enforce the Lipschitz constraint required by the Wasserstein distance.
 
 ## Summary
 Below is a table, summarising the number of parameters and the BLEU scores achieved by each architecture.
@@ -40,13 +36,5 @@ Below is a table, summarising the number of parameters and the BLEU scores achie
 <ins>**Note:**</ins>
 1. The above FID scores may vary slightly upon training the models (even with fixed SEED).
 
-## Plots
-<p align="center">
-  <img src = "https://github.com/IvLabs/Natural-Language-Processing/blob/master/neural_machine_translation/plots/Seq2Seq.jpeg?raw=true"/>
-  <img src = "https://github.com/IvLabs/Natural-Language-Processing/blob/master/neural_machine_translation/plots/Seq2Seq_with_Attention.jpeg?raw=true"/> 
-  <img src = "https://github.com/IvLabs/Natural-Language-Processing/blob/master/neural_machine_translation/plots/Conv_Seq2Seq.jpeg?raw=true"/>
-  <img src = "https://github.com/IvLabs/Natural-Language-Processing/blob/master/neural_machine_translation/plots/Transformer.jpeg?raw=true"/>
-</p>
-
 ### Reference(s):
-* [PyTorch Seq2Seq by Ben Trevett](https://github.com/bentrevett/pytorch-seq2seq)
+* [PyTorch GAN by Aladdin Persson](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/558557c7989f0b10fee6e8d8f953d7269ae43d4f/ML/Pytorch/GANs)
