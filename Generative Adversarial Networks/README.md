@@ -31,7 +31,6 @@ Below is a table, summarising the number of parameters and the BLEU scores achie
 | Architecture                        | No. of Trainable Parameters Generator | No. of Trainable Parameters Discriminator | FID Score  |
 | ----------------------------------- |:-------------------------------------:|:-----------------------------------------:|:----------:|
 | DCGAN                               |               12,658,435              |                  2,765,633                |   270.69   |
-| WGAN                                |               20,518,917              |                                           |   243      |
 
 <ins>**Note:**</ins>
 1. The above FID scores may vary slightly upon training the models (even with fixed SEED).
