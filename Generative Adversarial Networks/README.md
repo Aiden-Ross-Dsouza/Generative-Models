@@ -32,16 +32,13 @@ This paper presents a remarkable improvement in the Sequence to Sequence archite
 ## Summary
 Below is a table, summarising the number of parameters and the BLEU scores achieved by each architecture.
 
-| Architecture                        | No. of Trainable Parameters | BLEU Score |
-| ----------------------------------- |:---------------------------:|:----------:|
-| Sequence to Sequence                |         13,899,013          |   18.94    |
-| Sequence to Sequence with Attention |         20,518,917          |   31.24    |
-| Convolutional Sequence to Sequence  |         37,351,685          |   36.53    |
-| Attention Is All You Need           |          9,038,853          |   37.50    |
+| Architecture                        | No. of Trainable Parameters Generator | No. of Trainable Parameters Discriminator | FID Score  |
+| ----------------------------------- |:-------------------------------------:|:-----------------------------------------:|:----------:|
+| DCGAN                               |               12,658,435              |                  2,765,633                |   270.69   |
+| WGAN                                |               20,518,917              |                                           |   243      |
 
 <ins>**Note:**</ins>
-1. The above BLEU scores may vary slightly upon training the models (even with fixed SEED).
-2. The research paper notes for the above mentioned papers can be found [here](https://github.com/IvLabs/ResearchPaperNotes/tree/master/natural_language_processing).
+1. The above FID scores may vary slightly upon training the models (even with fixed SEED).
 
 ## Plots
 <p align="center">
@@ -50,7 +47,6 @@ Below is a table, summarising the number of parameters and the BLEU scores achie
   <img src = "https://github.com/IvLabs/Natural-Language-Processing/blob/master/neural_machine_translation/plots/Conv_Seq2Seq.jpeg?raw=true"/>
   <img src = "https://github.com/IvLabs/Natural-Language-Processing/blob/master/neural_machine_translation/plots/Transformer.jpeg?raw=true"/>
 </p>
-
 
 ### Reference(s):
 * [PyTorch Seq2Seq by Ben Trevett](https://github.com/bentrevett/pytorch-seq2seq)
