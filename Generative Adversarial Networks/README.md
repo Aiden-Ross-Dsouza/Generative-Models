@@ -43,3 +43,5 @@ Below is a table, summarising the number of parameters and the BLEU scores achie
 * [PyTorch GAN by Aladdin Persson](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/558557c7989f0b10fee6e8d8f953d7269ae43d4f/ML/Pytorch/GANs)
 * [Blog on DCGAN by Chris](https://medium.com/@kyang3200/deep-learning-dcgan-deep-convolutional-generative-adversarial-network-882624fdefe3)
 * [Blog on WGAN & WGAN-GP by Jonathan Hui](https://jonathan-hui.medium.com/gan-wasserstein-gan-wgan-gp-6a1a2aa1b490)
+* [Blog on Conditional GANs by Avikumar Talaviya](https://medium.com/ai-science/introduction-to-conditional-gans-8f855b7048cd)
+* [PyTorch Conditional GAN by Artur Machado Lacerda](https://www.kaggle.com/code/arturlacerda/pytorch-conditional-gan)
